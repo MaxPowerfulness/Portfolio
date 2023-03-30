@@ -71,14 +71,12 @@ button:hover {
     }
 }
 
-@keyframes slide-in {
+@keyframes slideup {
     from {
-      transform: translateX(100%);
-      opacity: 0;
+      transform: translateX(0%);
     }
     to {
-      transform: translateX(0%);
-      opacity: 1;
+      transform: translateX(50%);
     }
   }
 
@@ -240,11 +238,13 @@ img {
 }
 
 #skills {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255);
     border-radius: 20px;
     color: black;
     padding: 10px 20px;
     text-align: center;
+    height: 50%;
+    width: 30%;
 }
 
 #skills ul {
@@ -260,24 +260,25 @@ img {
     margin-top: 20px;
 }
 
-#skills img {
-    height: 10%;
-    width: 10%;
+.skillImg {
+    height: 50%;
+    width: 50%;
 }
 
-.label {
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: all 0.5s ease-out;
-    height: 100%;
+.iconText {
+    position: absolute;
+    z-index: 2;
+    transform: translate(0, -250%);
+}
+
+.skillIconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 30%;
+    height: 30%;
 }
-
-.label:hover {
-    opacity: 1;
-    transform: translateX(5%);
-}
-
 
 .overlay {
     display: block;
