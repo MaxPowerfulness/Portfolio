@@ -1,0 +1,292 @@
+@font-face {
+    font-family: 'Garamond';
+    src: url('./CormorantGaramond-Regular.ttf');
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Garamond';
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+body {
+    background: #fffdd0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(300px, 400px) 3fr;
+}
+
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #fffdd0;
+    color: black;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+@keyframes fadeOut {
+    100% { opacity: 1; }
+    0% { opacity: 0; }
+}
+
+@keyframes popup {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes slide-in {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+
+/* Navbar */
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 40px;
+    color: rgb(44, 39, 37);
+    font-size: 30px;
+    border-bottom: 2px solid #D0D2FF;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    text-align: right;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.sidebarItem:hover {
+    transform: scale(1.1);
+    background: rgb(173, 177, 255, 0.5);
+    box-shadow: 2px 5px 8px rgb(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+
+
+/* Welcome page */
+#welcome {
+    display: none;
+    background: black;
+    color: white;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    text-align: center;
+}
+
+.openingStatement {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ #welcome p{
+    opacity: 0;
+    animation: fadeIn 1.5s;
+    animation-fill-mode: forwards;
+ }
+
+ #welcome p:nth-child(2) {
+    animation-delay: 3s;
+ }
+
+ #welcome p.fadeOut {
+    animation: fadeOut 1.5s;
+ }
+
+
+
+
+
+/* Grid */
+img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+}
+
+#gridContainer {
+    display: grid;
+    grid-template: repeat(2, 225px) / repeat(3, minmax(325px, 375px));
+    gap: 100px;
+    width: 90%;
+    margin-left: 60px;
+    justify-content: center;
+    padding: 25px 10px;
+    background:#443d41;
+    border: black 2px solid;
+    border-radius: 45px;
+    box-shadow: 5px 20px 40px rgb(0, 0, 0, 0.7);
+}
+
+.gridItem {
+    border: 1px solid black;
+    position: relative;
+    border-radius: 15px;
+}
+
+.gridItemCover {
+    display: none;
+    position: absolute;
+    height:100%;
+    width: 100%;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    background: rgb(0, 0, 0, 0.6);
+    color: white;
+    font-size: 20px;
+    text-shadow:
+            0.05em 0 black,
+            0 0.05em black,
+            -0.05em 0 black,
+            0 -0.05em black,
+            -0.05em -0.05em black,
+            -0.05em 0.05em black,
+            0.05em -0.05em black,
+            0.05em 0.05em black;
+    
+}
+.gridItem:hover .gridItemCover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border: 2px rgb(173, 177, 255, 0.8) solid;
+    box-shadow: 5px 20px 40px rgb(173, 177, 255, 0.5);
+    border-radius: 15px;
+}
+
+.btnContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+/* Popups */
+
+#about,
+#skills {
+    display: none;
+    position: fixed;
+    color: white;
+    height: 40%;
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    animation: popup;
+    animation-duration: 0.7s;
+    transform: scale(1.5);
+    z-index: 1;
+    top: 18%;
+    left: 38%;
+}
+
+.covered h1 {
+    margin-bottom: 10px;
+}
+
+#skills {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#skills ul {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+#skills ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#skills img {
+    height: 10%;
+    width: 10%;
+}
+
+.label {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s ease-out;
+    height: 100%;
+    width: 30%;
+}
+
+.label:hover {
+    opacity: 1;
+    transform: translateX(5%);
+}
+
+
+.overlay {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
