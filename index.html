@@ -14,7 +14,7 @@
             <li class="sidebarItem">Projects</li>
             <li class="skills sidebarItem">Skills</li>
             <li class="about sidebarItem">About</li>
-            <li class="sidebarItem">Contact</li>
+            <li class="contact sidebarItem">Contact</li>
         </ul>
         <ul class="sidebar">
             <li class="sidebarItem">Linkedin</li>
@@ -113,6 +113,17 @@
                 <div class="skillIconContainer"><img class="skillImg" src="./command-line.png" alt=""> <span class="iconText" style="display:none">Bash</span></div>
             </li>
         </ul>
+    </div>
+    <div id="contact" class="covered">
+        <form action="">
+            <p class="formInput"><label for="name">Name:*</label> <input type="text" id="name" name="name" required></p>
+
+            <p class="formInput"><label for="email">Email:*</label> <input type="email" name="email" id="email" required></p>
+
+            <p class="formInput"><label for="message">Message:*</label> <textarea name="message" id="message" cols="35" rows="10" placeholder="Message" required></textarea></p>
+
+            <button>Submit</button>
+        </form>
     </div>
 </body>
 </html>

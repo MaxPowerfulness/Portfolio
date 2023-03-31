@@ -7,6 +7,8 @@ const skills = document.getElementById('skills');
 const skillsSide = document.querySelector('.skills');
 const skillImgs = document.querySelectorAll('.skillImg');
 const skillImgTexts = document.querySelectorAll('.iconText');
+const contactSide = document.querySelector('.contact');
+const contact = document.getElementById('contact');
 
 
 aboutSide.addEventListener('click', () => {
@@ -20,8 +22,10 @@ skillsSide.addEventListener('click', () => {
 });
 
 overlay.addEventListener('click', () => {
+    skills.classList.add('popdown');
     cover.style.display = 'none';
     skills.style.display = 'none';
+    contact.style.display = 'none';
     overlay.classList.toggle('overlay');
 });
 
@@ -33,6 +37,13 @@ skillImgs.forEach((skillImg, index) => {
         skillImgTexts[index].style.display = 'none';
       });
 })
+
+contactSide.addEventListener('click', () => {
+    contact.style.display = 'flex';
+    overlay.classList.toggle('overlay');
+})
+
+
 
 console.log('skillImg', skillImgs)
 console.log('texts', skillImgTexts)

@@ -7,6 +7,7 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Garamond';
+    box-sizing: border-box;
 }
 
 ul {
@@ -68,6 +69,15 @@ button:hover {
     }
     to {
         transform: scale(1.5);
+    }
+}
+
+@keyframes popdown {
+    from {
+        transform: scale(1.5);
+    }
+    to {
+        transform: scale(0);
     }
 }
 
@@ -215,13 +225,13 @@ img {
 
 
 /* Popups */
-
 #about,
-#skills {
+#skills,
+#contact {
     display: none;
     position: fixed;
     color: white;
-    height: 40%;
+    height: 45%;
     width: 30%;
     padding: 20px;
     box-sizing: border-box;
@@ -231,6 +241,7 @@ img {
     z-index: 1;
     top: 18%;
     left: 38%;
+    justify-content: center;
 }
 
 .covered h1 {
@@ -277,6 +288,36 @@ img {
     width: 30%;
     height: 30%;
 }
+
+form {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #fffdd0;
+    padding: 50px 0px 50px 0px;
+    width: 75%;
+}
+
+label {
+    display: inline-block;
+    width: 65px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  display: inline-block;
+  width: 250px;
+  padding-left: 2px;
+}
+
+.formInput {
+    display: flex;
+    align-items: flex-start;
+}
+
+
 
 .overlay {
     display: block;
