@@ -56,14 +56,37 @@ email.addEventListener('input', (event) => {
 });
 
 
+// Creates a welcome message. 
+function writeWelcomeDisplay () {
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('welcome');
+    const line1 = document.createElement('p');
+    const line2 = document.createElement('p');
+    line1.textContent = "Welcome to my Portfolio";
+    line2.textContent = "Here's a little about me";
+    document.body.appendChild(textContainer);
+    textContainer.appendChild(line1);
+    textContainer.appendChild(line2);;
+    setTimeout(function () {
+        line1.classList.add('fadeIn')
+    }, 500)
+    setTimeout(function () {
+        line2.classList.add('fadeIn');
+    }, 3000)
+    return textContainer;
+};
 
-
+// Executes writeWelcomeDisaply and adds classes for text fade in fade out effect.
 function welcomeDisplay() {
-    welcome.style.display = 'block';
-    setTimeout(function() {
-        document.querySelector('#welcome > div ~ p').classList.add('fadeOut');
-      }, 8000);
+    const textContainer = writeWelcomeDisplay().children;
+    console.log('textContainer', textContainer);
+    setTimeout(function() { 
+        for (const element in textContainer) {
+            textContainer[element].classList.remove('fadeIn');
+            textContainer[element].classList.add('fadeOut');
+        }
+    }, 7000);
 }
 
-
-//Window.onload(welcomeDisplay());
+// Runs welcomeDisaply on page load.
+Window.onload(welcomeDisplay());

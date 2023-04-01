@@ -54,15 +54,6 @@ button:hover {
     cursor: pointer;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-@keyframes fadeOut {
-    100% { opacity: 1; }
-    0% { opacity: 0; }
-}
-
 @keyframes popup {
     from {
         transform: scale(0);
@@ -121,8 +112,10 @@ nav {
 
 
 /* Welcome page */
-#welcome {
-    display: none;
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: black;
     color: white;
     position: fixed;
@@ -132,25 +125,18 @@ nav {
     text-align: center;
 }
 
-.openingStatement {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
- #welcome p{
+ .welcome p{
     opacity: 0;
-    animation: fadeIn 1.5s;
+    transition: opacity 1s;
     animation-fill-mode: forwards;
  }
 
- #welcome p:nth-child(2) {
-    animation-delay: 3s;
- }
-
- #welcome p.fadeOut {
-    animation: fadeOut 1.5s;
+.fadeIn {
+    opacity: 1 !important;
+}
+ 
+ .fadeOut {
+    opacity: 0;
  }
 
 
@@ -172,7 +158,7 @@ img {
     margin-left: 60px;
     justify-content: center;
     padding: 25px 10px;
-    background:#443d41;
+    background:#383436;
     border: black 2px solid;
     border-radius: 45px;
     box-shadow: 5px 20px 40px rgb(0, 0, 0, 0.7);
